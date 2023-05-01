@@ -1,0 +1,18 @@
+Package: VenturaLeonTools
+Version: 0.5-1
+Date: 2023-05-01
+Title: Data analysis tools
+Encoding: UTF-8
+Author: Jose Ventura <jventuraleon@gmail.com>
+Maintainer: Jose Ventura <jventuraleon@gmail.com>
+Depends: R (>= 3.1.0)
+Imports: RCurl, stringr
+Description: Esta es una función que permite el calculo rapido de ciertos estadisticos descriptivos, de fiabilidad y otros
+License: GPL (>= 2)
+URL: https://www.r-project.org
+Packaged: 2022-07-07 10:50:11 UTC; jonas
+Suggests: testthat (>= 2.0.0)
+Config/testthat/edition: 2
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2022-07-07 12:00:05 UTC
