@@ -1,6 +1,7 @@
 Fiabilidad <- function(vars, data) {
   library(lavaan)
   library(semTools)
+  library(dplyr)
   # Extraer los valores de las variables en 'vars' del data frame 'data'
   temp_data <- data %>% select(all_of(vars))
 
