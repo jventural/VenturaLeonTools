@@ -1,4 +1,5 @@
 calcula_omega_all <- function(extracted, data) {
+  library(tidyverse)
   # Inicializar el dataframe de resultados
   resultados <- data.frame(Variable = character(),
                            Omega = numeric())
