@@ -1,7 +1,4 @@
 Fiabilidad <- function(vars, data) {
-  library(lavaan)
-  library(semTools)
-  library(dplyr)
   # Extraer los valores de las variables en 'vars' del data frame 'data'
   temp_data <- data %>% select(all_of(vars))
 
@@ -13,6 +10,5 @@ Fiabilidad <- function(vars, data) {
 
   # Calcular la fiabilidad compuesta
   resultado <- compRelSEM(fit.original, tau.eq = F, ord.scale = T)
-  output <- sprintf("El coeficiente omega para tus datos es %f", resultado)
-  return(output)
+  return(resultado)
 }
