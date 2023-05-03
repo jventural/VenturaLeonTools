@@ -1,5 +1,5 @@
-\name{FiabilidadTools}
-\alias{FiabilidadTools}
+\name{Fiabilidad}
+\alias{Fiabilidad}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{
