@@ -1,4 +1,5 @@
 \name{DescripTools}
+\alias{DescripTools}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{
