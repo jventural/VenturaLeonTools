@@ -1,7 +1,9 @@
-Standardized_solutions <- function(specification, name_items, num_factors, apply_threshold = TRUE) {
+Standardized_solutions <- function(specification, name_items, apply_threshold = TRUE) {
   library(tidyr)
   library(dplyr)
   library(stringr)
+
+  num_factors <- length(specification@lhs)
 
   result <- standardizedsolution(specification) %>%
     filter(op == "=~") %>%
@@ -18,9 +20,12 @@ Standardized_solutions <- function(specification, name_items, num_factors, apply
         . <= 0.30 ~ 0, TRUE ~ .)))
   }
 
+  factor_order <- paste0("desc(", paste0("f", 1:num_factors), ")", collapse = ", ")
+  factor_order <- parse_expr(paste("arrange(", factor_order, ")"))
   result <- result %>%
-    arrange(desc(f1), desc(f2), desc(f3), desc(f4), desc(f5)) %>%
+    eval_tidy(factor_order) %>%
     rename(Items = rhs)
 
   return(result)
 }
+

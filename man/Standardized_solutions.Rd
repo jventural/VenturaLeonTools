@@ -13,7 +13,6 @@ Standardized_solutions(specification, name_items, num_factors, apply_threshold =
 \arguments{
 \item{specification}{It is the model obtained with the specification_models function. Specifying the factor through square brackets}
 \item{name_items}{It is the name of the items}
-\item{num_factors}{It is the number of factors}
 \item{apply_threshold}{If TRUE eliminates values less than 0.30 in the other factors. Default FALSE}
 
 }
