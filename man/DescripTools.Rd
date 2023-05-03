@@ -1,5 +1,5 @@
-\name{DescripTools}
-\alias{DescripTools}
+\name{calcular_porcentajes}
+\alias{calcular_porcentajes}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{
@@ -7,7 +7,7 @@ This package offers a function to describe the sociodemographic variables of the
 }
 
 \usage{
-DescripTools(x, columnas)
+calcular_porcentajes(x, columnas)
 }
 
 \arguments{
