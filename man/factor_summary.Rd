@@ -1,6 +1,6 @@
 \name{factor_summary}
 \alias{VenturaleonTools}
-\title{Herramientos del profesor Jose Ventura Leon}
+\title{Tools of Professor Jose Ventura Leon}
 
 \description{
 This package offers a function to extract the information of the loadings, communalities and uniqueness of the items.

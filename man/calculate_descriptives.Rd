@@ -1,6 +1,6 @@
 \name{Calcule_descriptives}
 \alias{VenturaleonTools}
-\title{Herramientos del profesor Jose Ventura Leon}
+\title{Tools of Professor Jose Ventura Leon}
 
 \description{
 Este paquete ofrece una función para calcular los estadisticos descriptivos de los factores en estudio.

@@ -1,6 +1,6 @@
 \name{calcula_omega_all}
 \alias{VenturaleonTools}
-\title{Herramientos del profesor Jose Ventura Leon}
+\title{Professor Jose Ventura Leon's tools}
 
 \description{
 This package offers a function to calculate the reliability of all test factors.

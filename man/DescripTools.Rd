@@ -1,6 +1,6 @@
 \name{DescripTools}
 \alias{VenturaleonTools}
-\title{Herramientos del profesor Jose Ventura Leon}
+\title{Tools of Professor Jose Ventura Leon}
 
 \description{
 This package offers a function to describe the sociodemographic variables of the study.

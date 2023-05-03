@@ -1,6 +1,6 @@
 \name{generate_code}
 \alias{VenturaleonTools}
-\title{Herramientos del profesor Jose Ventura Leon}
+\title{Tools of Professor Jose Ventura Leon}
 
 \description{
 This package offers a function to generate the code to calculate the sum of the variables under study.

@@ -1,6 +1,6 @@
 \name{FiabilidadTools}
 \alias{VenturaleonTools}
-\title{Herramientos del profesor Jose Ventura Leon}
+\title{Tools of Professor Jose Ventura Leon}
 
 \description{
 This package offers a function to calculate the reliability by means of the omega coefficient of the factors under study.

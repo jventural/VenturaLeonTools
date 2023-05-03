@@ -1,6 +1,6 @@
 \name{factors_data_items}
 \alias{VenturaleonTools}
-\title{Herramientos del profesor Jose Ventura Leon}
+\title{Tools of Professor Jose Ventura Leon}
 
 \description{
 This package offers a function that incorporates the phrase of the items in the factor structure.
