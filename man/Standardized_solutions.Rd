@@ -7,7 +7,7 @@ This package provides a function to obtain the factor loadings of the model.
 }
 
 \usage{
-Standardized_solutions(specification, name_items, num_factors, apply_threshold = TRUE)
+Standardized_solutions(specification, name_items, apply_threshold = TRUE)
 }
 
 \arguments{
