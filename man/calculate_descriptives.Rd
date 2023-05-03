@@ -1,5 +1,5 @@
 \name{Calcule_descriptives}
-\alias{VenturaleonTools}
+\alias{Calcule_descriptives}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{

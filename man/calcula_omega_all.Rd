@@ -1,5 +1,5 @@
 \name{calcula_omega_all}
-\alias{VenturaleonTools}
+\alias{calcula_omega_all}
 \title{Professor Jose Ventura Leon's tools}
 
 \description{

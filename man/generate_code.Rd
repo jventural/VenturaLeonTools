@@ -1,5 +1,5 @@
 \name{generate_code}
-\alias{VenturaleonTools}
+\alias{generate_code}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{

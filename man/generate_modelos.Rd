@@ -1,5 +1,5 @@
 \name{generate_modelos}
-\alias{VenturaleonTools}
+\alias{generate_modelos}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{

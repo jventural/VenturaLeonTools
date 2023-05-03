@@ -1,5 +1,5 @@
 \name{factor_summary}
-\alias{VenturaleonTools}
+\alias{factor_summary}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{

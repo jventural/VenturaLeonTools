@@ -1,5 +1,5 @@
 \name{Standardized_solutions}
-\alias{VenturaleonTools}
+\alias{Standardized_solutions}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{

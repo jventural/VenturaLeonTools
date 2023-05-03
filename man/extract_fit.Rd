@@ -1,5 +1,5 @@
 \name{extract_fit}
-\alias{VenturaleonTools}
+\alias{extract_fit}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{

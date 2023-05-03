@@ -1,5 +1,5 @@
 \name{ExtractItems}
-\alias{VenturaleonTools}
+\alias{ExtractItems}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{

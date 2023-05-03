@@ -1,5 +1,5 @@
 \name{specification_models}
-\alias{VenturaleonTools}
+\alias{specification_models}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{

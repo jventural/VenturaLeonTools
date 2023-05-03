@@ -1,5 +1,5 @@
 \name{cor_afe}
-\alias{VenturaleonTools}
+\alias{cor_afe}
 \title{Tools of Professor Jose Ventura Leon}
 
 \description{
