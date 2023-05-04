@@ -2,32 +2,32 @@ Calcule_Comparative <- function(data, cols, group_var) {
   library(tidyverse)
   group_values <- as.character(unique(data[[group_var]]))
 
-  data %>%
+  data_with_order <- data %>%
+    mutate(order = match(colnames(data), cols)) %>%
     pivot_longer(
       cols = cols,
       names_to = "Variables_interes",
       values_to = "Ptje_vi"
-    ) %>%
+    )
+
+  data_with_order %>%
     group_by(Variables_interes) %>%
     summarise(
       sd_1 = sd(Ptje_vi[data[[group_var]] == group_values[1]]),
       sd_2 = sd(Ptje_vi[data[[group_var]] == group_values[2]]),
-      const = 1  # Agrega una columna constante para unir los data frames
+      const = 1,  # Agrega una columna constante para unir los data frames
+      order = first(order) # Agrega el orden de las columnas
     ) %>%
     left_join(
-      data %>%
-        pivot_longer(
-          cols = cols,
-          names_to = "Variables_interes",
-          values_to = "Ptje_vi"
-        ) %>%
+      data_with_order %>%
         group_by(Variables_interes) %>%
         summarise(
           broom::tidy(t.test(Ptje_vi ~ data[[group_var]], var.equal = FALSE)),
-          d_cohen = WRS2::akp.effect(Ptje_vi ~ data[[group_var]], EQVAR = FALSE)$AKPeffect
+          d_cohen = WRS2::akp.effect(Ptje_vi ~ data[[group_var]], EQVAR = FALSE)$AKPeffect,
+          order = first(order) # Agrega el orden de las columnas
         ) %>%
         select(
-          Variables_interes, estimate, estimate1, estimate2, statistic, p.value, d_cohen, statistic, parameter
+          Variables_interes, estimate, estimate1, estimate2, statistic, p.value, d_cohen, statistic, parameter, order
         ) %>%
         rename(M_1 = estimate1, M_2 = estimate2, Diff = estimate, gl = parameter, t = statistic, p = p.value)
     ) %>%
@@ -47,7 +47,7 @@ Calcule_Comparative <- function(data, cols, group_var) {
       )
     ) %>%
     select(
-      Variables_interes, `M1(SD1)`, `M2(SD2)`, t, gl, p, d_cohen, Interpretacion
+      Variables_interes, `M1(SD1)`, `M2(SD2)`, t, gl, p, d_cohen, Interpretacion, order
     ) %>%
     rename_with(
       ~str_replace_all(.x, "M1", group_values[1]),
@@ -56,5 +56,7 @@ Calcule_Comparative <- function(data, cols, group_var) {
     rename_with(
       ~str_replace_all(.x, "M2", group_values[2]),
       starts_with("M2")
-    )
+    ) %>%
+    arrange(order) %>% # Ordena el resultado final según la columna 'order'
+    select(-order) # Elimina la columna 'order
 }
