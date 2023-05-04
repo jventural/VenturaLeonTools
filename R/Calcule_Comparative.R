@@ -40,9 +40,9 @@ Calcule_Comparative <- function(data, cols, group_var) {
     ) %>%
     mutate(
       interpretacion = if_else(
-        abs(d_cohen) > 0.80, "grande",
-        if_else(abs(d_cohen) > 0.50, "mediano",
-                if_else(abs(d_cohen) > 0.30, "pequeño", "trivial"))
+        abs(d_cohen) > 0.80, "Grande",
+        if_else(abs(d_cohen) > 0.50, "Mediano",
+                if_else(abs(d_cohen) > 0.30, "Pequeño", "Trivial"))
       )
     ) %>%
     select(
