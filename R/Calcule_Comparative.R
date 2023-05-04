@@ -46,7 +46,7 @@ Calcule_Comparative <- function(data, cols, group_var) {
       )
     ) %>%
     select(
-      Variables_interes, `M1(SD1)`, `M2(SD2)`, t, gl, p, d_cohen, interpretacion
+      Variables_interes, `M1(SD1)`, `M2(SD2)`, t, gl, p, d_cohen, Interpretacion
     ) %>%
     rename_with(
       ~str_replace_all(.x, "M1", group_values[1]),
