@@ -1,4 +1,5 @@
 Calcule_Comparative <- function(data, cols, group_var) {
+  library(tidyverse)
   group_values <- as.character(unique(data[[group_var]]))
 
   data %>%
