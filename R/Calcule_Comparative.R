@@ -39,7 +39,7 @@ Calcule_Comparative <- function(data, cols, group_var) {
       `M2(SD2)` = M2_SD2
     ) %>%
     mutate(
-      interpretacion = if_else(
+      Interpretacion = if_else(
         abs(d_cohen) > 0.80, "Grande",
         if_else(abs(d_cohen) > 0.50, "Mediano",
                 if_else(abs(d_cohen) > 0.30, "Pequeño", "Trivial"))
