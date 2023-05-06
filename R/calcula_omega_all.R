@@ -4,7 +4,7 @@ calcula_omega_all <- function(extracted, data) {
   library(semTools)
   library(dplyr)
   # Initialize the results dataframe
-  resultados <- data.frame(Variable = character(),
+  resultados <- data.frame(Variables = character(),
                            Omega = numeric())
 
   # Internal function to calculate reliability
@@ -27,7 +27,7 @@ calcula_omega_all <- function(extracted, data) {
   for (key in names(extracted)) {
     vars <- extracted[[key]]
     omega <- fiabilidad_interna(vars = vars, data = data)
-    resultados <- rbind(resultados, data.frame(Variable = key, Omega = omega))
+    resultados <- rbind(resultados, data.frame(Variables = key, Omega = omega))
   }
   rownames(resultados) <- NULL
 
