@@ -1,4 +1,5 @@
 calculate_descriptives <- function(data, start_col, end_col) {
+  library(tidyverse)
   data %>%
     select(start_col:end_col) %>%
     psych::describe() %>%
