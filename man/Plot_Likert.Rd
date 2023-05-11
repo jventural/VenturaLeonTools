@@ -14,10 +14,12 @@ Plot_Likert(Data, name_items, rango)
 \item{Data}{It is the database}
 \item{name_items}{It is the name of the items}
 \item{ranges}{range of the number of test items}
+\item{exclude}{The number to be placed is the one to be removed}
+
 
 }
 
 
 \examples{
-Plot_Likert(df_new_renombrado, "CCOV", 1:25)
+Plot_Likert(Data, "CCOV", 1:25, exclude = c(1,2))
 }

@@ -1,7 +1,14 @@
-Plot_Likert <- function(Data, name_items, ranges) {
+Plot_Likert <- function(Data, name_items, ranges, exclude = NULL) {
   library(tidyverse)
+
   # Crear los nombres de las columnas
   cols <- paste0(name_items, ranges)
+
+  # Remover los ítems a excluir
+  if (!is.null(exclude)) {
+    exclude_cols <- paste0(name_items, exclude)
+    cols <- setdiff(cols, exclude_cols)
+  }
 
   # Comprobar que las columnas existen en el dataframe
   if (!all(cols %in% names(Data))) {
