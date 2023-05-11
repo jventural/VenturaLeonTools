@@ -26,10 +26,11 @@ Plot_Likert <- function(Data, name_items, ranges) {
   # Crear el gráfico
   ggplot(df_pivot, aes(x= as.factor(Var_Ptjes))) +
     geom_bar(fill = "#CCD1D1", colour="black") +
-    geom_text(stat='count', aes(label=scales::percent(..count../nrow(df_pivot),1)), vjust=-0.1,size = 3)+
+    geom_text(stat='count', aes(label=scales::percent(..count../nrow(Data),1)), vjust=-0.1,size = 3)+
     scale_y_continuous(limits=c(0,nrow(Data)))+
     facet_wrap(vars(Variables), scale = "free_x") +
     theme_bw()+
     labs(x = "Tasas de respuesta")+
-    labs(y = "")
+    labs(y = "")+
+    theme(axis.text.y = element_blank())
 }
