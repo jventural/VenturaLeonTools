@@ -14,7 +14,7 @@ Calcule_Comparative(data, cols, group_var)
 \item{data}{It is the database}
 \item{cols}{The variables under study are}
 \item{group_var}{It is the comparison variable}
-
+\item{Robust}{Si es TRUE es Cohen Robusto y FALSE Cohen no Robusto}
 }
 
 

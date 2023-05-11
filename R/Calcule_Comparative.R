@@ -1,4 +1,4 @@
-Calcule_Comparative <- function(data, cols, group_var) {
+Calcule_Comparative <- function(data, cols, group_var, Robust = FALSE) {
   library(forcats)
   group_values <- as.character(unique(data[[group_var]]))
 
@@ -28,7 +28,11 @@ Calcule_Comparative <- function(data, cols, group_var) {
         group_by(Variables_interes) %>%
         summarise(
           broom::tidy(t.test(Ptje_vi ~ data[[group_var]], var.equal = FALSE)),
-          d_cohen = WRS2::akp.effect(Ptje_vi ~ data[[group_var]], EQVAR = FALSE)$AKPeffect
+          d_cohen = if (Robust) {
+            WRS2::akp.effect(Ptje_vi ~ data[[group_var]], EQVAR = FALSE)$AKPeffect
+          } else {
+            effectsize::cohens_d(Ptje_vi ~ data[[group_var]])$Cohens_d
+          }
         ) %>%
         select(
           Variables_interes, estimate, estimate1, estimate2, statistic, p.value, d_cohen, statistic, parameter
@@ -44,10 +48,11 @@ Calcule_Comparative <- function(data, cols, group_var) {
       `M2(SD2)` = M2_SD2
     ) %>%
     mutate(
-      Interpretacion = if_else(
-        abs(d_cohen) > 0.80, "Grande",
-        if_else(abs(d_cohen) > 0.50, "Mediano",
-                if_else(abs(d_cohen) > 0.30, "Pequeño", "Trivial"))
+      Interpretacion = case_when(
+        abs(d_cohen) > 0.80 ~ "Grande",
+        abs(d_cohen) > 0.50 ~ "Mediano",
+        abs(d_cohen) > 0.30 ~ "Pequeño",
+        TRUE ~ "Trivial"
       )
     ) %>%
     select(
@@ -62,4 +67,3 @@ Calcule_Comparative <- function(data, cols, group_var) {
       starts_with("M2")
     )
 }
-
