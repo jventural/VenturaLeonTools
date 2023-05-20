@@ -11,7 +11,8 @@ grafico_boxplots <- function(data, cols) {
     geom_boxplot(aes(x=ID, y=value, fill=Variables)) +
     facet_wrap(~Variables, scales = "free") +
     theme_bw() +
-    xlab(" ")
+    xlab(" ")+
+    theme(legend.position = "none")
 
   return(p)
 }
