@@ -1,12 +1,11 @@
-calcular_correlaciones <- function(data, columna_inicial, columna_final, method = c("spearman", "pearson"), winsorize = FALSE) {
+calcular_correlaciones <- function(data, columnas, method = c("spearman", "pearson"), winsorize = FALSE) {
   library(dplyr)
   library(WRS2)
   # Asegurar que method sea válido
   method <- match.arg(method)
 
   # Seleccionar las columnas
-  column_range <- which(names(data) %in% c(columna_inicial, columna_final))
-  data <- data[, min(column_range):max(column_range)]
+  data <- data[, columnas]
 
   if (winsorize && method == "pearson") {
     # Calcular la correlación de Pearson winsorizado
@@ -25,3 +24,4 @@ calcular_correlaciones <- function(data, columna_inicial, columna_final, method 
 
   return(result)
 }
+
